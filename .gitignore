@@ -1,0 +1,8 @@
+﻿/__pycache__
+1/
+/build
+/dist
+pyexcel.exe
+pyexcel.spec
+*.xlsx
+*.xls
