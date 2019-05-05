@@ -2,6 +2,7 @@
 1/
 /build
 /dist
+/Logs
 pyexcel.exe
 pyexcel.spec
 *.xlsx
