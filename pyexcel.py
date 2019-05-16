@@ -9,6 +9,8 @@ import traceback
 import sys
 import os.path
 import os
+from xlrd import open_workbook
+from xlutils.copy import copy 
 
 start = time.perf_counter()
 # 实例化
@@ -69,6 +71,19 @@ def update(a):
                 arr3.append(arr13)
                 arr4.append(arr41)
             print(arr4)
+            rb = open_workbook(a[2],formatting_info=True)   
+            wb = copy(rb) 
+            column1=24
+            # ws = wb.get_sheet(2)  
+            # ws.write(a[3], column1, arr1[0][0])
+            for sheetNum in range(1, 31): 
+                ws = wb.get_sheet(sheetNum)                
+                for columnNum5 in range(0, 3):
+                    ws.write(int(a[3])-1, column1+columnNum5, arr1[sheetNum-1][columnNum5])
+                ws.write(32, 22, "arr1[sheetNum-1][columnNum5]")
+
+                
+            wb.save(a[2])
 
 
         except Exception:
